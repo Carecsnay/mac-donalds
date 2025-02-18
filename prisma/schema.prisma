@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Restaurant {
+  id             String         @id @default(uuid())
+  name           String
+  slug           String
+  description    String
+  avatarImageUrl String
+  coverImageUrl  String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  menuCategories MenuCategory[]
+  products       Product[]
+  orders         Order[]
+}
+
+model MenuCategory {
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  products     Product[]
+  id           String     @id @default(uuid())
+  name         String
+  restaurantId String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model Product {
+  restaurant     Restaurant   @relation(fields: [restaurantId], references: [id])
+  menuCategory   MenuCategory @relation(fields: [menuCategoryId], references: [id])
+  restaurantId   String
+  menuCategoryId String
+
+  id            String         @id @default(uuid())
+  name          String
+  description   String
+  price         Float
+  ingredients   String[]
+  imageUrl      String
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  orderProducts OrderProduct[]
+}
+
+model Order {
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  restaurantId String
+
+  id                Int               @id @default(autoincrement())
+  total             Float
+  status            OrderStatus
+  consumptionMethod ConsumptionMethod
+  OrderProduct      OrderProduct[]
+}
+
+model OrderProduct {
+  product   Product @relation(fields: [productId], references: [id])
+  order     Order   @relation(fields: [orderId], references: [id])
+  productId String
+  orderId   Int
+
+  id        String   @id @default(uuid())
+  quantity  Int
+  price     Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum OrderStatus {
+  PENDING
+  IN_PREPARATION
+  FINISHED
+}
+
+enum ConsumptionMethod {
+  TAKEAWAY
+  DINE_IN
+}
