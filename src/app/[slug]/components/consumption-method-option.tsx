@@ -31,8 +31,8 @@ const ConsumptionMethodOption = ({
             className="object-contain"
           ></Image>
         </div>
-
-        <Button variant="secondary" className="rounded-full">
+        {/* asChild resolve o problema de não ter um html semântico (a dentro de um button) */}
+        <Button variant="secondary" className="rounded-full" asChild>
           <Link href={`/${slug}/menu?consumptionMethod=${option}`}>
             {buttonText}
           </Link>
