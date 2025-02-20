@@ -1,10 +1,33 @@
+import { notFound } from "next/navigation";
+
+import { db } from "@/lib/prisma";
+
 interface RestaurantMenuPageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ consumptionMethod: string }>;
 }
 
-const RestaurantMenuPage = async ({ params }: RestaurantMenuPageProps) => {
+const isConsumptionMethodValid = (consumptionMethod: string) => {
+  return ["DINE_IN", "TAKEAWAY"].includes(consumptionMethod);
+};
+
+const RestaurantMenuPage = async ({
+  params,
+  searchParams,
+}: RestaurantMenuPageProps) => {
   const { slug } = await params;
-  return <h1>{slug}</h1>;
+  const { consumptionMethod } = await searchParams;
+  if (!isConsumptionMethodValid(consumptionMethod)) {
+    return notFound();
+  }
+  const restaurant = await db.restaurant.findUnique({ where: { slug } });
+  return (
+    <h1>
+      {slug} {consumptionMethod}
+    </h1>
+  );
 };
 
 export default RestaurantMenuPage;
+
+// http://localhost:3000/fsw-foods/menu?consumptionMethod=TAKEAWAY
