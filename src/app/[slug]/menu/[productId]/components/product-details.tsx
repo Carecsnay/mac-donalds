@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { formatCurrency } from "@/helpers/format-currency";
 
 interface ProductDetailsProps {
@@ -37,8 +38,8 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
   };
 
   return (
-    <div className="relative-z 50 t-3xl mt-[-1.5rem] flex flex-auto flex-col rounded p-5">
-      <div className="flex-auto">
+    <div className="relative-z 50 t-3xl mt-[-1.5rem] flex flex-auto flex-col overflow-hidden rounded p-5">
+      <div className="flex-auto overflow-hidden">
         {/* restaurante */}
         <div className="flex items-center gap-1.5">
           <Image
@@ -79,20 +80,41 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
           </div>
         </div>
 
-        {/* Sobre */}
-        <div className="mt-6 space-y-3">
-          <h4 className="font-semibold">Sobre</h4>
-          <p className="text-sm text-muted-foreground">{product.description}</p>
-        </div>
-
-        {/* Ingredientes */}
-        <div className="mt-6 space-y-3">
-          <div className="flex items-center gap-1">
-            <ChefHatIcon size={18} />
-            <h4 className="font-semibold">Ingredientes</h4>
+        <ScrollArea className="h-full">
+          {/* Sobre */}
+          <div className="mt-6 space-y-3">
+            <h4 className="font-semibold">Sobre</h4>
+            <p className="text-sm text-muted-foreground">
+              {product.description}
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground">{product.ingredients}</p>
-        </div>
+
+          {/* Ingredientes */}
+          <div className="mt-6 space-y-3">
+            <div className="flex items-center gap-1">
+              <ChefHatIcon size={18} />
+              <h4 className="font-semibold">Ingredientes</h4>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              {product.ingredients}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {product.ingredients}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {product.ingredients}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {product.ingredients}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {product.ingredients}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {product.ingredients}
+            </p>
+          </div>
+        </ScrollArea>
       </div>
       <Button className="mt-6 w-full rounded-full">Adicionar à sacola</Button>
     </div>
