@@ -40,7 +40,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
   return (
     <div className="relative-z 50 t-3xl mt-[-1.5rem] flex flex-auto flex-col overflow-hidden rounded p-5">
       <div className="flex-auto overflow-hidden">
-        {/* restaurante */}
+        {/* RESTAURANTE */}
         <div className="flex items-center gap-1.5">
           <Image
             src={product.restaurant.avatarImageUrl}
@@ -54,7 +54,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
           </p>
         </div>
 
-        {/* preço e quantidade */}
+        {/* PREÇO E QUANTIDADE */}
         <h2 className="mt-3 text-xl font-semibold">{product.name}</h2>
 
         <div className="mb-3 flex items-center justify-between">
@@ -80,8 +80,8 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
           </div>
         </div>
 
-        <ScrollArea className="h-full">
-          {/* Sobre */}
+        <ScrollArea className="max-h-[350px] overflow-y-auto">
+          {/* SOBRE */}
           <div className="mt-6 space-y-3">
             <h4 className="font-semibold">Sobre</h4>
             <p className="text-sm text-muted-foreground">
@@ -89,7 +89,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
             </p>
           </div>
 
-          {/* Ingredientes */}
+          {/* INGREDIENTES */}
           <div className="mt-6 space-y-3">
             <div className="flex items-center gap-1">
               <ChefHatIcon size={18} />
@@ -97,7 +97,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
             </div>
             <ul className="text-muted-fo list-disc px-5 text-sm text-muted-foreground">
               {product.ingredients.map((ingredient) => (
-                <li className="py-[3px]" key={ingredient}>
+                <li className="my-1" key={ingredient}>
                   {ingredient}
                 </li>
               ))}
