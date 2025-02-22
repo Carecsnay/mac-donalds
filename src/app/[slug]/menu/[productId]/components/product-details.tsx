@@ -57,7 +57,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
         {/* preço e quantidade */}
         <h2 className="mt-1 text-xl font-semibold">{product.name}</h2>
 
-        <div className="flex items-center justify-between">
+        <div className="mb-3 flex items-center justify-between">
           <h3 className="text-lg font-semibold">
             {formatCurrency(product.price)}
           </h3>
@@ -98,25 +98,10 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
             <p className="text-sm text-muted-foreground">
               {product.ingredients}
             </p>
-            <p className="text-sm text-muted-foreground">
-              {product.ingredients}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {product.ingredients}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {product.ingredients}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {product.ingredients}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {product.ingredients}
-            </p>
           </div>
         </ScrollArea>
       </div>
-      <Button className="mt-6 w-full rounded-full">Adicionar à sacola</Button>
+      <Button className="mt-4 w-full rounded-full">Adicionar à sacola</Button>
     </div>
   );
 };
