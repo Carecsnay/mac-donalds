@@ -30,6 +30,8 @@ const ProductHeader = ({ product }: ProductPageProps) => {
         alt={product.name}
         fill
         className="object-contain"
+        sizes="(max-width: 300px) 100vw, 50vw"
+        priority={true}
       ></Image>
       <Button
         variant="secondary"
