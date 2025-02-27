@@ -56,7 +56,9 @@ model Order {
   total             Float
   status            OrderStatus
   consumptionMethod ConsumptionMethod
-  OrderProduct      OrderProduct[]
+  orderProducts     OrderProduct[]
+  customerName      String
+  customerCpf       String
 }
 
 model OrderProduct {
