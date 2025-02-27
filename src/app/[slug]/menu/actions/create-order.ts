@@ -14,11 +14,18 @@ interface CreateOrderInput {
     quantity: number;
   }>;
   consumptionMethod: ConsumptionMethod;
-  restaurantId: string;
+  slug: string;
 }
 
 //Imagina que é algo que vai rondar no servidor (API).
 export const createOrder = async (input: CreateOrderInput) => {
+  const restaurant = await db.restaurant.findUnique({
+    where: { slug: input.slug },
+  });
+
+  if (!restaurant) {
+    throw new Error("Restaurant not found!");
+  }
   const productsWithPrices = await db.product.findMany({
     where: {
       id: {
@@ -48,7 +55,7 @@ export const createOrder = async (input: CreateOrderInput) => {
         0,
       ),
       consumptionMethod: input.consumptionMethod,
-      restaurantId: input.restaurantId,
+      restaurantId: restaurant.id,
     },
   });
 };
