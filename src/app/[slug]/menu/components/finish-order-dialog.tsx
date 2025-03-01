@@ -2,10 +2,12 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ConsumptionMethod } from "@prisma/client";
+import { Loader2Icon } from "lucide-react";
 import { useParams, useSearchParams } from "next/navigation";
-import { useContext } from "react";
+import { useContext, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { PatternFormat } from "react-number-format";
+import { toast } from "sonner";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -56,6 +58,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
   const { slug } = useParams<{ slug: string }>();
   const { products } = useContext(CartContext); //produtos que estão no contexto
   const searchParams = useSearchParams();
+  const [isPending, startTransition] = useTransition();
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -67,15 +70,19 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
 
   const onSubmit = async (data: FormSchema) => {
     try {
-      const consumptionMethod = searchParams.get(
+      const consumptionMethod = searchParams.get( 
         "consumptionMethod",
       ) as ConsumptionMethod;
-      await createOrder({
-        consumptionMethod,
-        customerCpf: data.cpf,
-        customerName: data.name,
-        products,
-        slug,
+      startTransition(async () => {
+        await createOrder({
+          consumptionMethod,
+          customerCpf: data.cpf,
+          customerName: data.name,
+          products,
+          slug,
+        });
+        onOpenChange(false);
+        toast.success("Pedido finalizado com sucesso!");
       });
     } catch (error) {
       console.error(error);
@@ -132,7 +139,9 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                   type="submit"
                   variant={"destructive"}
                   className="rounded-full"
+                  disabled={isPending}
                 >
+                  {isPending && <Loader2Icon className="animate-spin" />}
                   Finalizar
                 </Button>
                 <DrawerClose asChild>
