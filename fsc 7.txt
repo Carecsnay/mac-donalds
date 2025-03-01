@@ -1,0 +1,118 @@
+1 aula - 4
+2 aula - E
+3 aula - Z
+4 aula - I
+5 aula - T
+6 aula - I
+
+4EZITI
+
+Sou 1%
+
+
+techs usada
+
+Extensões VSCODE
+Perfumaria
+- poimandres (thema)
+- symbol icons (ícones)
+
+Importantes 
+- prettier
+- eslint
+- prisma
+- PostCSS Language Support
+- gitlens
+- Simple React Snippets
+
+Outros
+- Conventional commits
+- Fonte: Poppins
+- Regras ESLint (importação de bibliotecas sempre virão primeiro) (npm install -D eslint-plugin-simple-import-sort@12.1.1)
+- Regras ESLint script (".vscode\settings.json")
+- npm install -D prettier prettier-plugin-tailwindcss@0.6.5 (sort classes)
+
+Frontend
+- NextJS v15
+- NODEJS v22
+	Set-ExecutionPolicy Bypass -Scope Process
+	choco install nodejs-lts
+
+- npx create-next-app@15.1.6 .
+- typescript
+- eslint
+- tailwind
+- app router
+- src diretory
+- tailwind
+- npx shadcn@2.3.0 init
+  --legacy-peer-deps
+- npx shadcn@2.3.0 add button
+-npx shadcn@2.3.0 add input
+
+Backend
+- Prisma ORM@6.2.1
+- npx prisma init
+- Prisma/client@6.2.1
+- npx prisma format
+- npx prisma 
+- npx prisma migrate dev -> add_initial_tables
+- npx prisma db seeds 
+- ts-node@10.9.2
+- npx prisma db seed
+- Postgress (relational DB)
+
+
+Aula 3
+
+FrontEnd
+- Interface TS
+- notFound() (next navigation)
+- remotePatterns
+- npx shadcn@2.3.0 add card
+- shadcn
+- ConsumptionMethod (prisma)
+- Pick (prisma)
+- use client
+- npx shadcn@2.3.0 add scroll-área
+- useState
+
+BackEnd
+- npx prisma studio (corrigir a url)
+- npx prisma generate (atualizar as migrations com o projeto, usado quando alteramos o prisma.schema)
+- [slug]
+
+
+
+Aula 4
+
+FrontEnd
+- use cliente
+- tl.NumberFormat
+- contexto api
+- npx shadcn@2.3.0 add sheet
+- extends (herança com interface)
+- createContext from react
+- shorthand operator
+
+
+Aula 5 
+- truncate text-ellipsis (TAILWIND)
+- Lucide icons
+- npx shadcn@2.3.0 add drawer
+- react rook form + zod + form shadcn
+- npx shadcn@2.3.0 add form
+- schema form com zod
+- refine zod
+- mensage zod 
+- infer zod
+- resolver zod
+- useForm() 
+- npm i react-number-format@5.4.3
+- severActions (funções executados no servidor, mas podem serem chamadas de cliente components)
+- use server 
+- server action
+- npx shadcn@2.3.0 add sonner
+- npx shadcn@2.3.0 add drawer
+- npx shadcn@2.3.0 add separator
+ 
