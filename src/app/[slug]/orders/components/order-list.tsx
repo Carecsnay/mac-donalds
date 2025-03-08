@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { formatCurrency } from "@/helpers/format-currency";
+import { dataFormat } from "@/helpers/format-date";
 
 interface OrderListProps {
   orders: Array<
@@ -48,21 +49,29 @@ const OrderList = ({ orders }: OrderListProps) => {
       {orders.map((order) => (
         <Card key={order.id}>
           <CardContent className="space-y-4 p-5">
-            {/* renderização condicional */}
-            <div
-              className={clsx(
-                "w-fit rounded-full px-2 py-1 text-xs font-semibold",
-                {
-                  "bg-green-400 text-white":
-                    order.status === OrderStatus.FINISHED,
-                  "bg-red-400 text-white": order.status === OrderStatus.PENDING,
-                  "bg-yellow-400 text-white":
-                    order.status === OrderStatus.IN_PREPARATION,
-                },
-              )}
-            >
-              {getStatusLabel(order.status)}
+            <div className="flex items-center justify-between">
+              {/* renderização condicional */}
+              <div
+                className={clsx(
+                  "w-fit rounded-full px-2 py-1 text-xs font-semibold",
+                  {
+                    "bg-green-400 text-white":
+                      order.status === OrderStatus.FINISHED,
+                    "bg-red-400 text-white":
+                      order.status === OrderStatus.PENDING,
+                    "bg-yellow-400 text-white":
+                      order.status === OrderStatus.IN_PREPARATION,
+                  },
+                )}
+              >
+                {getStatusLabel(order.status)}
+              </div>
+
+              <p className="text-[12px] font-semibold">
+                Pedido criado em: {dataFormat(order.createdAt)}
+              </p>
             </div>
+
             <div className="flex items-center gap-2">
               <div className="relative h-5 w-5">
                 <Image
@@ -74,6 +83,7 @@ const OrderList = ({ orders }: OrderListProps) => {
               </div>
               <p className="text-sm font-semibold">{order.restaurant.name}</p>
             </div>
+
             <Separator />
             <div className="space-y-2">
               {order.orderProducts.map((orderProduct) => (
