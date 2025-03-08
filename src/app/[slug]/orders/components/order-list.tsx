@@ -1,4 +1,5 @@
-import { Prisma } from "@prisma/client";
+import { OrderStatus, Prisma } from "@prisma/client";
+import clsx from "clsx";
 import { ChevronLeftIcon, ScrollTextIcon } from "lucide-react";
 import Image from "next/image";
 
@@ -27,6 +28,13 @@ interface OrderListProps {
   >;
 }
 
+const getStatusLabel = (status: OrderStatus) => {
+  if (status === "FINISHED") return "Finalizado";
+  if (status === "IN_PREPARATION") return "Em preparo";
+  if (status === "PENDING") return "Pendente";
+  else return "";
+};
+
 const OrderList = ({ orders }: OrderListProps) => {
   return (
     <div className="space-y-6 p-6">
@@ -40,8 +48,20 @@ const OrderList = ({ orders }: OrderListProps) => {
       {orders.map((order) => (
         <Card key={order.id}>
           <CardContent className="space-y-4 p-5">
-            <div className="w-fit rounded-full bg-gray-400 px-2 py-1 text-xs font-semibold text-white">
-              Em preparo
+            {/* renderização condicional */}
+            <div
+              className={clsx(
+                "w-fit rounded-full px-2 py-1 text-xs font-semibold",
+                {
+                  "bg-green-400 text-white":
+                    order.status === OrderStatus.FINISHED,
+                  "bg-red-400 text-white": order.status === OrderStatus.PENDING,
+                  "bg-yellow-400 text-white":
+                    order.status === OrderStatus.IN_PREPARATION,
+                },
+              )}
+            >
+              {getStatusLabel(order.status)}
             </div>
             <div className="flex items-center gap-2">
               <div className="relative h-5 w-5">
