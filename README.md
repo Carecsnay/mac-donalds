@@ -5,7 +5,7 @@ Aplicação de self-checkout inspirada no sistema do McDonald's, desenvolvida du
 
 Confira o projeto em funcionamento clicando no link abaixo:  
 
-🟢[Vercel](https://fsw-donalds-self.vercel.app/fsw-donalds) 
+🟢[Vercel]([https://fsw-donalds-self.vercel.app/fsw-donalds](https://fsw-donalds-7-edition.vercel.app/fsw-donalds)) 
 
 ## Tecnologias Utilizadas  
 
