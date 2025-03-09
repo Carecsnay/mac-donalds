@@ -1,118 +1,75 @@
-1 aula - 4
-2 aula - E
-3 aula - Z
-4 aula - I
-5 aula - T
-6 aula - I
+🚀 𝗣𝗮𝗿𝘁𝗶𝗰𝗶𝗽𝗮𝗿 𝗱𝗼 𝗙𝗦𝗪 𝟳 𝗳𝗼𝗶 𝘂𝗺𝗮 𝗲𝘅𝗽𝗲𝗿𝗶𝗲̂𝗻𝗰𝗶𝗮 𝗶𝗻𝗰𝗿𝗶́𝘃𝗲𝗹!
 
-4EZITI
+Durante o evento, tive a oportunidade de desenvolver uma aplicação de self-checkout inspirada no sistema do McDonald's, utilizando uma stack moderna e cheia de boas práticas. Foi um desafio enriquecedor, e quero compartilhar um pouco do que aprendi e das tecnologias que utilizamos ao longo do projeto.
 
-Sou 1%
-
-
-techs usada
-
-Extensões VSCODE
-Perfumaria
-- poimandres (thema)
-- symbol icons (ícones)
-
-Importantes 
-- prettier
-- eslint
-- prisma
-- PostCSS Language Support
-- gitlens
-- Simple React Snippets
-
-Outros
-- Conventional commits
-- Fonte: Poppins
-- Regras ESLint (importação de bibliotecas sempre virão primeiro) (npm install -D eslint-plugin-simple-import-sort@12.1.1)
-- Regras ESLint script (".vscode\settings.json")
-- npm install -D prettier prettier-plugin-tailwindcss@0.6.5 (sort classes)
-
-Frontend
-- NextJS v15
-- NODEJS v22
-	Set-ExecutionPolicy Bypass -Scope Process
-	choco install nodejs-lts
-
-- npx create-next-app@15.1.6 .
-- typescript
-- eslint
-- tailwind
-- app router
-- src diretory
-- tailwind
-- npx shadcn@2.3.0 init
-  --legacy-peer-deps
-- npx shadcn@2.3.0 add button
--npx shadcn@2.3.0 add input
-
-Backend
-- Prisma ORM@6.2.1
-- npx prisma init
-- Prisma/client@6.2.1
-- npx prisma format
-- npx prisma 
-- npx prisma migrate dev -> add_initial_tables
-- npx prisma db seeds 
-- ts-node@10.9.2
-- npx prisma db seed
-- Postgress (relational DB)
-
-
-Aula 3
-
-FrontEnd
-- Interface TS
-- notFound() (next navigation)
-- remotePatterns
-- npx shadcn@2.3.0 add card
-- shadcn
-- ConsumptionMethod (prisma)
-- Pick (prisma)
-- use client
-- npx shadcn@2.3.0 add scroll-área
-- useState
-
-BackEnd
-- npx prisma studio (corrigir a url)
-- npx prisma generate (atualizar as migrations com o projeto, usado quando alteramos o prisma.schema)
-- [slug]
-
-
-
-Aula 4
-
-FrontEnd
-- use cliente
-- tl.NumberFormat
-- contexto api
-- npx shadcn@2.3.0 add sheet
-- extends (herança com interface)
-- createContext from react
-- shorthand operator
-
-
-Aula 5 
-- truncate text-ellipsis (TAILWIND)
-- Lucide icons
-- npx shadcn@2.3.0 add drawer
-- react rook form + zod + form shadcn
-- npx shadcn@2.3.0 add form
-- schema form com zod
-- refine zod
-- mensage zod 
-- infer zod
-- resolver zod
-- useForm() 
-- npm i react-number-format@5.4.3
-- severActions (funções executados no servidor, mas podem serem chamadas de cliente components)
-- use server 
-- server action
-- npx shadcn@2.3.0 add sonner
-- npx shadcn@2.3.0 add drawer
-- npx shadcn@2.3.0 add separator
+𝗧𝗲𝗰𝗻𝗼𝗹𝗼𝗴𝗶𝗮𝘀 𝗲 𝗙𝗲𝗿𝗿𝗮𝗺𝗲𝗻𝘁𝗮𝘀 𝗨𝘁𝗶𝗹𝗶𝘇𝗮𝗱𝗮𝘀
  
+🧩Extensões do VSCode 
+𝗣𝗲𝗿𝗳𝘂𝗺𝗮𝗿𝗶𝗮 (𝘃𝗶𝘀𝘂𝗮𝗶𝘀):
+• Poimandres (tema)
+• Symbol Icons (ícones)
+
+𝗜𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁𝗲𝘀:
+• Prettier (formatação de código)
+• ESLint (linting e padronização)
+• Prisma (ORM para o banco de dados)
+• GitLens (facilita o uso do Git)
+• Simple React Snippets (snippets para React)
+
+𝗢𝘂𝘁𝗿𝗼𝘀:
+• Conventional Commits (padronização de commits)
+• Fonte: Poppins (usada no projeto)
+• Prettier + Tailwind (ordenação de classes com prettier-plugin-tailwindcss)
+
+𝗙𝗿𝗼𝗻𝘁𝗲𝗻𝗱 (𝘂𝘀𝗮𝗱𝗼𝘀 𝗻𝗼 𝗲𝘃𝗲𝗻𝘁𝗼)
+• Next.js v15 (framework React)
+• Node.js v22 (ambiente de execução)
+• TypeScript (tipagem estática)
+• Tailwind CSS (estilização)
+• App Router (roteamento no Next.js)
+• shadcn/ui (biblioteca de componentes):
+• Botão, Input, Card, Scroll Area, Sheet, Drawer, Separator e Sonner
+• React Hook Form + Zod (validação de formulários)
+• Lucide Icons (ícones)
+• React Number Format (formatação de números)
+• Server Actions (funções executadas no servidor)
+  
+𝗙𝗿𝗼𝗻𝘁𝗲𝗻𝗱 (𝗻𝗮̃𝗼 𝘂𝘀𝗮𝗱𝗼𝘀 𝗻𝗼 𝗲𝘃𝗲𝗻𝘁𝗼)
+• clsx (para lhe dar com a estilização condicional)
+  
+𝗕𝗮𝗰𝗸𝗲𝗻𝗱 (𝘂𝘀𝗮𝗱𝗼𝘀 𝗻𝗼 𝗲𝘃𝗲𝗻𝘁𝗼)
+• Prisma ORM v6.2.1 (ORM para banco de dados)
+• PostgreSQL (banco de dados relacional)
+• Migrations e Seeds (gerenciamento do banco de dados)
+• Prisma Studio (interface visual para o banco de dados)
+• Conceitos e Funcionalidades Implementadas
+• Frontend
+• Criação de interfaces com TypeScript.
+• Uso do notFound() do Next.js para páginas não encontradas.
+• Configuração de remotePatterns para imagens.
+• Gerenciamento de estado com useState.
+• Formatação de números com Intl.NumberFormat.
+• Criação de contexto com React Context API.
+• Herança de interfaces com extends.
+• Formulários com React Hook Form, Zod e shadcn/ui.
+• Validação de formulários com Zod.
+• Uso de Server Actions para funções no servidor.
+• Estilização condicional com clsx.
+• Deploy na Vercel com configuração de ambientes.
+  
+𝗔𝗽𝘁𝗶𝗱𝗼̃𝗲𝘀 𝗾𝘂𝗲 𝗺𝗲𝗹𝗵𝗼𝗿𝗲𝗶 𝗻𝗲𝘀𝘀𝗲 𝗲𝘃𝗲𝗻𝘁𝗼:
+1. Correção da URL do Prisma Studio.
+2. Atualização de migrations com npx prisma generate.
+3. Uso de [slug] para rotas dinâmicas.
+4. Organização: Uso de Conventional Commits e ESLint para padronização.
+5. Componentização: shadcn/ui trouxe agilidade no desenvolvimento de interfaces.
+6. Validação: Zod garantiu a integridade dos dados nos formulários.
+7. Deploy: Integração contínua com a Vercel para deploy automatizado.
+8. Network: Fiquei top 1 no suporte do evento e fiz novas amizades 💞.
+   
+Foi um evento incrivelmente enriquecedor, repleto de aprendizado, colaboração e trocas de conhecimento que levaram nosso projeto a outro nível! 🚀
+Quero expressar minha gratidão ao Full Stack Club por proporcionar essa oportunidade única de crescimento profissional e pessoal. Um agradecimento especial também aos colegas que participaram do projeto – cada contribuição foi essencial para o sucesso que alcançamos juntos.
+E o melhor? Ainda não acabou! Em breve, vou fazer a implementação com o Stripe, uma aula bônus do evento que vai trazer ainda mais funcionalidades e aprendizado para o projeto. 💳✨
+Essa experiência reforçou a importância do trabalho em equipe, da adoção de boas práticas e da constante busca por inovação. Mal posso esperar pelos próximos desafios e por tudo o que ainda vamos construir! 💻🔥
+
+#FSW7 #NextJS #Prisma #Tailwind #shadcn #Zod #Vercel #Stripe #FullStackClub #SelfCheckout #DesenvolvimentoWeb #Tecnologia #Inovação #AprendizadoColaborativo
