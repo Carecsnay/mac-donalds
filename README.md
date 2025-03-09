@@ -93,5 +93,8 @@ https://github.com/user-attachments/assets/72bdc555-1603-4375-9dc7-2bbf41d951a7
 ## Autor  
 Criado por Bruno Benicio durante o evento FSW 7 💜.
 
+## Certificado de participação  
+![480851538_1390451348612545_4824022382557128796_n](https://github.com/user-attachments/assets/b7ba2f6c-d105-4de6-ad28-48c99002f435)
+
 ---
-💳 Em breve, será implementada a integração com o **Stripe**, trazendo novas funcionalidades de pagamento!  
+⚠️ Em breve, será implementada a integração com o **Stripe**, trazendo novas funcionalidades de pagamento!  
