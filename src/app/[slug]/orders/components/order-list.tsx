@@ -36,6 +36,8 @@ const getStatusLabel = (status: OrderStatus) => {
   if (status === "FINISHED") return "Finalizado";
   if (status === "IN_PREPARATION") return "Em preparo";
   if (status === "PENDING") return "Pendente";
+  if (status === "PAYMENT_CONFIRMED") return "Pagamento confirmado";
+  if (status === "PAYMENT_FAILED") return "Pagamento cancelado";
   else return "";
 };
 
@@ -66,9 +68,11 @@ const OrderList = ({ orders }: OrderListProps) => {
                   "w-fit rounded-full px-2 py-1 text-xs font-semibold",
                   {
                     "bg-green-400 text-white":
-                      order.status === OrderStatus.FINISHED,
+                      order.status === OrderStatus.FINISHED ||
+                      order.status === OrderStatus.PAYMENT_CONFIRMED,
                     "bg-red-400 text-white":
-                      order.status === OrderStatus.PENDING,
+                      order.status === OrderStatus.PENDING ||
+                      order.status === OrderStatus.PAYMENT_FAILED,
                     "bg-yellow-400 text-white":
                       order.status === OrderStatus.IN_PREPARATION,
                   },
