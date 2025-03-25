@@ -44,7 +44,7 @@ export async function POST(request: Request) {
           },
         },
       });
-      revalidatePath(`/${order.restaurant.slug}/menu}`); //limpar cache
+      revalidatePath(`/${order.restaurant.slug}/orders}`); //limpar cache
       break;
     }
     case "charge.failed":
@@ -68,7 +68,7 @@ export async function POST(request: Request) {
             },
           },
         });
-        revalidatePath(`/${order.restaurant.slug}/menu}`); //limpar cache
+        revalidatePath(`/${order.restaurant.slug}/orders}`); //limpar cache
         break;
       }
 
