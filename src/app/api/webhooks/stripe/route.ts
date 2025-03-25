@@ -45,6 +45,7 @@ export async function POST(request: Request) {
         },
       });
       revalidatePath(`/${order.restaurant.slug}/menu}`); //limpar cache
+      break;
     }
     case "charge.failed":
       {
@@ -68,6 +69,7 @@ export async function POST(request: Request) {
           },
         });
         revalidatePath(`/${order.restaurant.slug}/menu}`); //limpar cache
+        break;
       }
 
       const paymentIsSuccessful = event.type === "checkout.session.completed";

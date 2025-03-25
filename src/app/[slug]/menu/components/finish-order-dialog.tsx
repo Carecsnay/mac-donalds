@@ -85,8 +85,10 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
         const { sessionId } = await createStripeCheckout({
           products,
           orderId: order.id,
+          cpf: data.cpf,
+          slug,
+          consumptionMethod,
         });
-        console.log({ sessionId });
         if (!process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY) return;
         const stripe = await loadStripe(
           process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY,
